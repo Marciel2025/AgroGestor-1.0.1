@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Entrar - AgroGestor+</title>
+
+
+    <style>
+
+        /* =====================================================
+           CONFIGURAÇÃO GERAL
+           ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #eeeeee;
+            color: #222;
+            overflow: hidden;
+        }
+
+
+        /* =====================================================
+           PÁGINA
+           ===================================================== */
+
+        .pagina {
+            width: 100%;
+            max-width: 430px;
+            height: 100vh;
+            min-height: 650px;
+            margin: 0 auto;
+            background: #ffffff;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        /* =====================================================
+           ÁREA PRINCIPAL
+           ===================================================== */
+
+        .conteudo {
+            width: 100%;
+            flex: 1;
+            padding: 16px 25px 0;
+            position: relative;
+            z-index: 2;
+        }
+
+
+        /* =====================================================
+           BOTÃO VOLTAR
+           ===================================================== */
+
+        .voltar {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            width: fit-content;
+            color: #398b2d;
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+
+        .icone-voltar {
+            width: 23px;
+            height: 23px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+
+        .icone-voltar img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+
+        /* =====================================================
+           LOGO
+           ===================================================== */
+
+        .logo-area {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 0;
+        }
+
+
+        .logo {
+            width: 175px;
+            max-width: 70%;
+            height: auto;
+            object-fit: contain;
+        }
+
+
+        /* =====================================================
+           TÍTULO
+           ===================================================== */
+
+        .titulo {
+            margin-top: 5px;
+            text-align: center;
+            color: #056522;
+            font-size: 38px;
+            font-weight: 800;
+            line-height: 1.1;
+
+            /* LETRAS COM ESPAÇAMENTO NORMAL */
+            letter-spacing: normal;
+            padding-left: 0;
+        }
+
+
+        /* =====================================================
+           SUBTÍTULO
+           ===================================================== */
+
+        .subtitulo {
+            margin-top: 5px;
+            text-align: center;
+            color: #777777;
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+
+        /* =====================================================
+           FORMULÁRIO
+           ===================================================== */
+
+        .formulario {
+            width: 100%;
+            margin-top: 22px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+
+        /* =====================================================
+           CAMPO
+           ===================================================== */
+
+        .campo {
+            width: 100%;
+            height: 58px;
+
+            border: 2px solid #d7d7d7;
+            border-radius: 13px;
+
+            background: #ffffff;
+
+            display: flex;
+            align-items: center;
+
+            padding: 0 16px;
+
+            position: relative;
+        }
+
+
+        /* =====================================================
+           ÍCONE DO CAMPO
+           ===================================================== */
+
+        .icone-campo {
+            width: 28px;
+            height: 28px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            flex-shrink: 0;
+
+            margin-right: 12px;
+        }
+
+
+        .icone-campo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+
+        /* =====================================================
+           INPUT
+           ===================================================== */
+
+        .campo input {
+            width: 100%;
+            height: 100%;
+
+            border: none;
+            outline: none;
+            background: transparent;
+
+            color: #333333;
+
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+        }
+
+
+        .campo input::placeholder {
+            color: #777777;
+            opacity: 1;
+        }
+
+
+        /* =====================================================
+           SENHA
+           ===================================================== */
+
+        .campo-senha {
+            padding-right: 10px;
+        }
+
+
+        .icone-olho {
+            width: 27px;
+            height: 27px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            flex-shrink: 0;
+
+            cursor: pointer;
+
+            border: none;
+            background: transparent;
+        }
+
+
+        .icone-olho img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+
+        .mostrar-senha {
+            border: none;
+            background: transparent;
+
+            color: #398b2d;
+
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+
+            white-space: nowrap;
+            cursor: pointer;
+
+            margin-left: 4px;
+        }
+
+
+        /* =====================================================
+           ESQUECI SENHA
+           ===================================================== */
+
+        .esqueci {
+            width: 100%;
+
+            display: flex;
+            justify-content: flex-end;
+
+            margin-top: 0;
+        }
+
+
+        .esqueci a {
+            color: #398b2d;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: underline;
+        }
+
+
+        /* =====================================================
+           BOTÃO ENTRAR
+           ===================================================== */
+
+        .botao-entrar {
+            width: 100%;
+            height: 58px;
+
+            margin-top: 4px;
+
+            border: none;
+            border-radius: 13px;
+
+            background: #056522;
+            color: #ffffff;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 12px;
+
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 5px 12px rgba(5, 101, 34, 0.18);
+
+            transition: 0.2s ease;
+        }
+
+
+        .botao-entrar:hover {
+            background: #087a2a;
+            transform: scale(1.01);
+        }
+
+
+        .botao-entrar:active {
+            transform: scale(0.98);
+        }
+
+
+        /* =====================================================
+           ÍCONE ENTRAR
+           ===================================================== */
+
+        .icone-entrar {
+            width: 31px;
+            height: 31px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        .icone-entrar img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+
+        /* =====================================================
+           DIVISOR
+           ===================================================== */
+
+        .divisor {
+            width: 100%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 12px;
+
+            margin-top: 22px;
+        }
+
+
+        .linha {
+            flex: 1;
+            height: 1px;
+            background: #dddddd;
+        }
+
+
+        /* =====================================================
+           FOLHINHA
+           ===================================================== */
+
+        .folhinha {
+            width: 24px;
+            height: 19px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        .folhinha img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+
+        /* =====================================================
+           TEXTO CRIAR CONTA
+           ===================================================== */
+
+        .sem-conta {
+            text-align: center;
+
+            color: #777777;
+
+            font-size: 16px;
+
+            margin-top: 10px;
+        }
+
+
+        .criar-conta {
+            display: block;
+
+            width: fit-content;
+
+            margin: 5px auto 0;
+
+            color: #276f22;
+
+            font-size: 17px;
+
+            font-weight: 700;
+
+            text-decoration: underline;
+        }
+
+
+        /* =====================================================
+           ÁREA DA FAZENDA
+           ===================================================== */
+
+        .fazenda-area {
+            width: 100%;
+
+            height: 145px;
+
+            margin-top: 8px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            z-index: 1;
+        }
+
+
+        /* =====================================================
+           IMAGEM DA FAZENDA
+           ===================================================== */
+
+        .fazenda {
+            position: absolute;
+
+            left: 0;
+            bottom: 0;
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            object-position: center bottom;
+        }
+
+
+        /* =====================================================
+           CURVA BRANCA
+           ===================================================== */
+
+        .curva {
+            position: absolute;
+
+            top: -38px;
+            left: -5%;
+
+            width: 110%;
+            height: 75px;
+
+            background: #ffffff;
+
+            border-radius: 50%;
+
+            z-index: 2;
+        }
+
+
+        /* =====================================================
+           CELULAR
+           ===================================================== */
+
+        @media (max-width: 600px) {
+
+            .conteudo {
+                padding: 14px 22px 0;
+            }
+
+
+            .voltar {
+                font-size: 16px;
+                gap: 8px;
+            }
+
+
+            .icone-voltar {
+                width: 21px;
+                height: 21px;
+            }
+
+
+            .logo {
+                width: 165px;
+            }
+
+
+            .titulo {
+                font-size: 34px;
+                margin-top: 3px;
+
+                /* SEM ESPAÇAMENTO ENTRE AS LETRAS */
+                letter-spacing: normal;
+                padding-left: 0;
+            }
+
+
+            .subtitulo {
+                font-size: 17px;
+                margin-top: 4px;
+            }
+
+
+            .formulario {
+                margin-top: 19px;
+                gap: 11px;
+            }
+
+
+            .campo {
+                height: 55px;
+                border-radius: 12px;
+                padding: 0 14px;
+            }
+
+
+            .icone-campo {
+                width: 27px;
+                height: 27px;
+                margin-right: 10px;
+            }
+
+
+            .campo input {
+                font-size: 15px;
+            }
+
+
+            .mostrar-senha {
+                font-size: 11px;
+            }
+
+
+            .icone-olho {
+                width: 25px;
+                height: 25px;
+            }
+
+
+            .esqueci a {
+                font-size: 14px;
+            }
+
+
+            .botao-entrar {
+                height: 55px;
+                font-size: 19px;
+                gap: 10px;
+            }
+
+
+            .icone-entrar {
+                width: 29px;
+                height: 29px;
+            }
+
+
+            .divisor {
+                margin-top: 19px;
+                gap: 12px;
+            }
+
+
+            .sem-conta {
+                font-size: 15px;
+                margin-top: 8px;
+            }
+
+
+            .criar-conta {
+                font-size: 16px;
+                margin-top: 4px;
+            }
+
+
+            .fazenda-area {
+                height: 135px;
+                margin-top: 6px;
+            }
+
+        }
+
+
+        /* =====================================================
+           CELULARES PEQUENOS
+           ===================================================== */
+
+        @media (max-width: 360px) {
+
+            .conteudo {
+                padding-left: 18px;
+                padding-right: 18px;
+            }
+
+
+            .logo {
+                width: 150px;
+            }
+
+
+            .titulo {
+                font-size: 31px;
+
+                letter-spacing: normal;
+                padding-left: 0;
+            }
+
+
+            .subtitulo {
+                font-size: 16px;
+            }
+
+
+            .campo {
+                height: 52px;
+            }
+
+
+            .icone-campo {
+                width: 25px;
+                height: 25px;
+            }
+
+
+            .campo input {
+                font-size: 14px;
+            }
+
+
+            .mostrar-senha {
+                font-size: 10px;
+            }
+
+
+            .esqueci a {
+                font-size: 13px;
+            }
+
+
+            .botao-entrar {
+                height: 52px;
+                font-size: 18px;
+            }
+
+
+            .sem-conta {
+                font-size: 14px;
+            }
+
+
+            .criar-conta {
+                font-size: 15px;
+            }
+
+
+            .fazenda-area {
+                height: 125px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <div class="pagina">
+
+
+        <main class="conteudo">
+
+
+            <!-- =================================================
+                 VOLTAR
+                 ================================================= -->
+
+<a
+    href="inicio.html"
+    class="voltar"
+
+            >
+
+                <span class="icone-voltar">
+
+                    <img
+                        src="voltar.png"
+                        alt=""
+                    >
+
+                </span>
+
+
+                <span>
+                    Voltar
+                </span>
+
+            </a>
+
+
+            <!-- =================================================
+                 LOGO
+                 ================================================= -->
+
+            <div class="logo-area">
+
+                <img
+                    src="AgroGestor.png"
+                    alt="Logo AgroGestor+"
+                    class="logo"
+                >
+
+            </div>
+
+
+            <!-- =================================================
+                 TÍTULO
+                 ================================================= -->
+
+            <h1 class="titulo">
+                Entrar
+            </h1>
+
+
+            <p class="subtitulo">
+                Acesse sua propriedade.
+            </p>
+
+
+            <!-- =================================================
+                 FORMULÁRIO
+                 ================================================= -->
+
+            <form
+                class="formulario"
+                onsubmit="entrar(event)"
+            >
+
+
+                <!-- CAMPO E-MAIL -->
+
+                <div class="campo">
+
+                    <span class="icone-campo">
+
+                        <img
+                            src="email.png"
+                            alt=""
+                        >
+
+                    </span>
+
+
+                    <input
+                        type="email"
+                        placeholder="E-mail"
+                        autocomplete="email"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- CAMPO SENHA -->
+
+                <div class="campo campo-senha">
+
+                    <span class="icone-campo">
+
+                        <img
+                            src="senha.png"
+                            alt=""
+                        >
+
+                    </span>
+
+
+                    <input
+                        id="senha"
+                        type="password"
+                        placeholder="Senha"
+                        autocomplete="current-password"
+                        required
+                    >
+
+
+                    <button
+                        type="button"
+                        class="icone-olho"
+                        onclick="mostrarSenha()"
+                    >
+
+                        <img
+                            src="olho.png"
+                            alt=""
+                        >
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="mostrar-senha"
+                        onclick="mostrarSenha()"
+                    >
+                        Mostrar senha
+                    </button>
+
+                </div>
+
+
+                <!-- ESQUECI SENHA -->
+
+                <div class="esqueci">
+
+                    <a href="#">
+                        Esqueci minha senha
+                    </a>
+
+                </div>
+
+
+                <!-- BOTÃO ENTRAR -->
+
+                <button
+                    type="submit"
+                    class="botao-entrar"
+                >
+
+                    <span class="icone-entrar">
+
+                        <img
+                            src="icone-entrar.png"
+                            alt=""
+                        >
+
+                    </span>
+
+
+                    <span>
+                        Entrar
+                    </span>
+
+                </button>
+
+
+            </form>
+
+
+            <!-- DIVISOR -->
+
+            <div class="divisor">
+
+                <span class="linha"></span>
+
+
+                <span class="folhinha">
+
+                    <img
+                        src="folha.png"
+                        alt=""
+                    >
+
+                </span>
+
+
+                <span class="linha"></span>
+
+            </div>
+
+
+            <!-- CRIAR CONTA -->
+
+            <p class="sem-conta">
+                Não possui conta?
+            </p>
+
+
+            <a
+                href="../PÁGINA CRIAR CONTA/criar.html"
+                class="criar-conta"
+            >
+                Criar Conta
+            </a>
+
+
+        </main>
+
+
+        <!-- =================================================
+             FAZENDA
+             ================================================= -->
+
+        <section class="fazenda-area">
+
+            <div class="curva"></div>
+
+
+            <img
+                src="fazenda.png"
+                alt="Ilustração de uma fazenda"
+                class="fazenda"
+            >
+
+        </section>
+
+
+    </div>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script>
+
+        function mostrarSenha() {
+
+            const senha =
+                document.getElementById("senha");
+
+            if (senha.type === "password") {
+
+                senha.type = "text";
+
+            } else {
+
+                senha.type = "password";
+
+            }
+
+        }
+
+
+        function entrar(event) {
+
+            event.preventDefault();
+
+            /*
+             * COLOQUE AQUI A PÁGINA QUE DEVE ABRIR
+             * DEPOIS QUE A PESSOA CLICAR EM ENTRAR.
+             */
+
+            window.location.href = "principal.html";
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
