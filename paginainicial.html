@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AgroGestor+</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: white;
+            min-height: 100vh;
+        }
+
+        .pagina {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .conteudo {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 105px 20px 40px;
+        }
+
+        /* TÍTULO */
+        h1 {
+            color: #056522;
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+            margin: 0;
+        }
+
+        /* LOGO */
+        .logo {
+            width: 310px;
+            max-width: 80%;
+            margin-top: 48px;
+            display: block;
+        }
+
+        /* TEXTO */
+        .descricao {
+            color: #111;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: -5px;
+        }
+
+        /* BOTÃO */
+        .botao {
+            width: 310px;
+            max-width: 80%;
+            height: 54px;
+
+            margin-top: 36px;
+
+            border: none;
+            border-radius: 30px;
+
+            background: #056522;
+            color: white;
+
+            font-size: 17px;
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+        }
+
+        .botao:hover {
+            background: #087a2a;
+            transform: scale(1.02);
+        }
+
+        .botao:active {
+            transform: scale(0.98);
+        }
+
+        /* PARTE VERDE INFERIOR */
+        .rodape {
+            height: 70px;
+            background: #056522;
+            width: 100%;
+        }
+
+        /* CELULAR */
+        @media (max-width: 600px) {
+
+            .conteudo {
+                padding-top: 70px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .logo {
+                margin-top: 40px;
+                width: 290px;
+            }
+
+            .descricao {
+                font-size: 13px;
+            }
+/* BOTÃO */
+.botao {
+    width: 310px;
+    max-width: 80%;
+    height: 54px;
+
+    margin-top: 36px;
+
+    border: none;
+    border-radius: 30px;
+
+    background: #056522;
+    color: white;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+    /* CENTRALIZA O TEXTO */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* REMOVE O ESTILO DE LINK */
+    text-decoration: none;
+
+    /* GARANTE QUE O TEXTO FIQUE DENTRO */
+    text-align: center;
+    line-height: 1;
+}
+
+.botao:hover {
+    background: #087a2a;
+    transform: scale(1.02);
+}
+
+.botao:active {
+    transform: scale(0.98);
+}
+
+            .rodape {
+                height: 60px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="pagina">
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <main class="conteudo">
+
+            <h1>
+                Bem-vindo(a) ao AgroGestor+
+            </h1>
+
+            <!-- LOGO -->
+            <img
+                src="AgroGestor.png"
+                alt="Logo AgroGestor+"
+                class="logo"
+            >
+
+            <!-- DESCRIÇÃO -->
+            <p class="descricao">
+                Gerencie sua fazenda de forma inteligente
+            </p>
+
+            <!-- BOTÃO -->
+           <a
+    href="../Página inicial 2/inicio.html"
+    class="botao"
+>
+    INICIAR JORNADA
+</a>
+
+        </main>
+
+
+    </div>
+
+
+</body>
+</html>
